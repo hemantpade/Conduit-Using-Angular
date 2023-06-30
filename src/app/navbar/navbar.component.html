@@ -1,0 +1,67 @@
+<nav class="navbar navbar-light">
+  <div class="container">
+
+    <a class="navbar-brand ng-binding" ui-sref="app.home" ng-bind="::$ctrl.appName | lowercase" href="#/">conduit</a>
+    <!-- Show this for logged out users -->
+    <ul show-authed="false" class="nav navbar-nav pull-xs-right" style="display: inherit;">
+      <li class="nav-item">
+        <a class="nav-link" ui-sref="app.home" routerLink="/">
+          Home
+        </a>
+      </li>
+      <li class="nav-item" *ngIf="this.loginService.isLoggedIn">
+        <a class="nav-link" routerLink="create-edit-article"> <i class="ion-compose"></i>&nbsp;New Article </a>
+      </li>
+      <li class="nav-item" *ngIf="this.loginService.isLoggedIn">
+        <a class="nav-link" routerLink="settings"><i class="ion-gear-a"></i>&nbsp;Settings </a>
+      </li>
+      <li class="nav-item" *ngIf="!this.loginService.isLoggedIn">
+        <a class="nav-link" ui-sref-active="active" ui-sref="app.login" routerLink="/login">
+          Sign in
+        </a>
+      </li>
+
+      <li class="nav-item" *ngIf="!this.loginService.isLoggedIn">
+        <a class="nav-link" ui-sref-active="active" ui-sref="app.register" routerLink="/signup">
+          Sign up
+        </a>
+
+        <li class="nav-item" *ngIf="this.loginService.isLoggedIn ">
+
+          <span class="nav-link" ui-sref-active="active" ui-sref="app.register" [routerLink]="'authors/'+username1">
+            <img src="{{img1}}" class="user-pic" alt=""> {{username1}}
+          </span>
+
+    </li>
+  </ul>
+
+    <!-- Show this for logged in users -->
+    <!-- <ul show-authed="true" class="nav navbar-nav pull-xs-right" style="display: none;">
+
+      <li class="nav-item">
+        <a class="nav-link active" ui-sref-active="active" ui-sref="app.home"  routerlink="login" href="#/">
+          Home
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" ui-sref-active="active" ui-sref="app.editor" href="#/editor/">
+          <i class="ion-compose"></i>&nbsp;New Article
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" ui-sref-active="active" href="#/settings">
+          <i class="ion-gear-a"></i>&nbsp;Settings
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link ng-binding" ui-sref-active="active" href="#/@">
+          <img class="user-pic">
+
+        </a>
+      </li>
+
+    </ul> -->
+  </div>
+</nav>

@@ -1,0 +1,66 @@
+<div class="settings-page">
+  <div class="container page">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 col-xs-12">
+        <h1 class="text-xs-center">Your Settings</h1>
+        <form (ngSubmit)="updateUserInfo()">
+          <fieldset>
+            <fieldset class="form-group">
+              <!-- <div class="profile-picture">
+                <input
+                id="profile-picture-input"
+                  class="form-control visually-hidden"
+                  type="file"
+                  (change)="handleImageUpload($event)"
+                  (click)="clearProfilePictureInput()"
+                />
+                <label class="upload-icon" for="profile-picture-input">
+                </label>
+                <img
+                  class="preview-image"src="{{img1}}"
+                  alt=""
+                />
+              </div> -->
+              <div class="profile-picture">
+                <input
+                  id="profile-picture-input"
+                  type="file"
+                  accept="image/*"
+                  style="display: none"
+                  (change)="handleImageUpload($event)"
+                />
+
+                <span class="file-name"></span>
+                <img class="" src="{{img1}}" alt="">
+
+              </div>
+              <button> <label class="upload-button" for="profile-picture-input">
+                Upload Image
+              </label></button>
+            </fieldset>
+            <fieldset class="form-group">
+              <input class="form-control form-control-lg" type="text" placeholder="Your Name" value="{{username1}}"/>
+            </fieldset>
+            <fieldset class="form-group">
+              <textarea
+                class="form-control form-control-lg"
+                rows="8"
+                placeholder="Short bio about you"
+                id="articleBody"
+              ></textarea>
+            </fieldset>
+            <fieldset class="form-group">
+              <input class="form-control form-control-lg" type="text" placeholder="Email" value="{{email1}}" />
+            </fieldset>
+            <fieldset class="form-group">
+              <input class="form-control form-control-lg" type="password" placeholder="New Password" name="password"  [(ngModel)]="password"/>
+            </fieldset>
+            <button class="btn btn-lg btn-primary pull-xs-right" type="submit">Update Settings</button>
+          </fieldset>
+        </form>
+        <hr />
+        <button class="btn btn-outline-danger" (click)="clickLogout()">Or click here to logout.</button>
+      </div>
+    </div>
+  </div>
+</div>

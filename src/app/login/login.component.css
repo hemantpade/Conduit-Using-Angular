@@ -1,0 +1,7 @@
+.text-xs-center a{
+    text-decoration: none;
+}
+
+.logged-in-message {
+  color: green;
+}

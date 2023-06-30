@@ -1,0 +1,29 @@
+.profile-page .user-info .user-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  margin-bottom: 1rem;
+}
+.author {
+  color: rgb(92, 184, 92);
+  text-decoration: none;
+  display: block;
+  font-weight: 500 !important;
+}
+.preview-link {
+  color: inherit !important;
+  text-decoration: none;
+}
+
+.btn-outline-primary {
+  border-color: rgb(92, 184, 92) !important ;
+  color: rgb(92, 184, 92) !important;
+}
+.btn-outline-primary:focus{
+  background: rgb(92, 184, 92) !important;
+  color: #fff !important;
+}
+.btn-outline-primary:hover {
+  background: rgb(92, 184, 92) !important;
+  color: #fff !important;
+}

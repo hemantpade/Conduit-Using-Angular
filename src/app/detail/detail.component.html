@@ -1,0 +1,170 @@
+<div class="article-page home-page">
+  <div class="banner">
+    <div class="container" >
+      <h1 ng-bind="::$ctrl.article.title" class="ng-binding">
+       {{article.title}}
+      </h1>
+
+      <!-- <article-actions article="$ctrl.article" class="ng-isolate-scope"><article-meta article="$ctrl.article" class="ng-isolate-scope"><div class="article-meta"> -->
+        <div class="article-meta">
+      <a
+        ui-sref="app.profile.main({ username:$ctrl.article.author.username })"
+        class=""
+        href="author/:id2"
+       >
+        <img ng-src="author/:id2" src="{{article.author.image}}" />
+      </a>
+
+      <div class="info">
+        <a class="author ng-binding" [href]="'authors/'+id">{{article.author.username}}</a>
+        <span
+          class="date ng-binding"
+          ng-bind="$ctrl.article.createdAt | date: 'longDate'"
+          >{{ formattedDate(article.updatedAt) }}</span
+        >
+      </div>
+
+      <!-- Otherwise, show favorite & follow buttons -->
+      <span ng-hide="$ctrl.canModify" class="ng-scope">
+        <button
+          class="btn btn-sm action-btn ng-binding btn-outline-secondary space"
+        >
+          <i class="ion-plus-round"></i>
+          &nbsp; Follow{{article.author.username}}
+        </button>
+        <button class="btn btn-sm btn-outline-primary" ng-click="$ctrl.submit()">
+          <i class="ion-heart"></i>
+          <span class="ng-binding ng-scope"> Favorite Article </span
+          ><span class="counter ng-binding ng-scope">({{article.favoritesCount
+          }})</span>
+        </button>
+      </span>
+    </div>
+  </div>
+</div>
+  <div class="container page">
+    <!-- Article's HTML & tags rendered here -->
+    <div class="row article-content">
+      <div class="col-xs-12">
+        <div ng-bind-html="::$ctrl.article.body" class="ng-binding">
+          <p>
+          {{article.body}}
+          </p>
+        </div>
+      </div>
+
+      <ul class="tag-list" >
+        <!-- ngRepeat: tag in ::$ctrl.article.tagList -->
+        <li *ngFor="let tag of article.tagList"
+          class="tag-default tag-pill tag-outline ng-binding ng-scope"
+          ng-repeat="tag in ::$ctrl.article.tagList"
+        >
+          {{tag}}
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="article-actions">
+    <div class="article-meta center-ele">
+      <a
+        ui-sref="app.profile.main({ username:$ctrl.article.author.username })"
+        [href]="'authors/'+id"
+      >
+        <img
+          ng-src="https://api.realworld.io/images/demo-avatar.png"
+          src="{{article.author.image}}"
+        />
+      </a>
+
+      <div class="info">
+        <a
+          class="author ng-binding"
+          ui-sref="app.profile.main({ username:$ctrl.article.author.username })"
+          ng-bind="$ctrl.article.author.username"
+          [href]="'authors/'+id"
+          >{{article.author.username}}</a
+        >
+        <span
+          class="date ng-binding"
+          ng-bind="$ctrl.article.createdAt | date: 'longDate' "
+          >{{ formattedDate(article.updatedAt) }}</span
+        >
+      </div>
+
+      <!-- If current user is the author, show edit/delete buttons -->
+      <!-- <span ng-show="$ctrl.canModify" class="ng-scope ng-hide">
+
+    <a class="btn btn-outline-secondary btn-sm">
+      <i class="ion-edit"></i> Edit Article
+    </a>
+
+    <button class="btn btn-outline-danger btn-sm" >
+      <i class="ion-trash-a"></i> Delete Article
+    </button>
+
+  </span> -->
+
+      <!-- Otherwise, show favorite & follow buttons -->
+      <span ng-hide="$ctrl.canModify" class="ng-scope">
+        <button class="btn btn-sm action-btn ng-binding btn-outline-secondary space">
+          <i class="ion-plus-round"></i>
+          &nbsp; Follow Anah Benešová
+        </button>
+
+        <button
+          class="btn btn-sm btn-outline-primary"
+          ng-class="{
+            disabled: $ctrl.isSubmitting,
+            'btn-outline-primary': !$ctrl.article.favorited,
+            'btn-primary': $ctrl.article.favorited
+          }"
+          ng-click="$ctrl.submit()"
+        >
+          <i class="ion-heart"></i>
+          <span class="ng-binding ng-scope"> Favorite Article </span
+          ><span class="counter ng-binding ng-scope">({{article.favoritesCount
+          }})</span>
+        </button>
+      </span>
+    </div>
+  </div>
+    <!-- Comments section -->
+    <div class="row">
+      <div class="col-xs-12 col-md-8 offset-md-2 center-ele">
+        <div show-authed="true" style="display: none">
+          <ul class="error-messages ng-hide" ng-show="$ctrl.errors">
+            <!-- ngRepeat: (field, errors) in $ctrl.errors -->
+          </ul>
+          <form
+            class="card comment-form ng-pristine ng-valid"
+            ng-submit="$ctrl.addComment()">
+            <div class="card-block">
+              <textarea
+                class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                placeholder="Write a comment..."
+                rows="3"
+                ng-model="$ctrl.commentForm.body"
+              ></textarea>
+            </div>
+            <div class="card-footer">
+              <img class="comment-author-img" />
+              <button class="btn btn-sm btn-primary" type="submit">
+                Post Comment
+              </button>
+            </div>
+          </form>
+        </div>
+        <p show-authed="false" style="display: inherit">
+          <a ui-sref="app.login" href="login">Sign in</a> or
+          <a ui-sref="app.register" href="signup">sign up</a> to add comments
+          on this article.
+        </p>
+        <!-- ngRepeat: cmt in $ctrl.comments -->
+      </div>
+    </div>
+    <!-- End main view -->
+</div>

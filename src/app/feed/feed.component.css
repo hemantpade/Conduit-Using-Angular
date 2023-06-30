@@ -1,0 +1,226 @@
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .pagination-container {
+    flex-direction: column;
+  }
+
+}
+
+
+.home-page .feed-toggle {
+  margin-bottom: -1px;
+}
+.nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+ul{
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.nav-pills::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.nav-pills .nav-item {
+  float: left;
+}
+.nav-pills .nav-item + .nav-item {
+  margin-left: 0.2rem;
+}
+/* .underline{
+  border-bottom: 3px solid rgb(92, 184, 92) !important;
+} */
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  color: inherit !important;
+  background-color: inherit !important;
+  border-bottom: 3px solid rgb(92, 184, 92) !important;
+  border-radius: 0px;
+  color: rgb(92, 184, 92)!important ;
+}
+.nav-items a span{
+  color:rgb(92, 184, 92)!important ;
+}
+.nav-pills::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body {
+  font-family: "Source Sans Pro", sans-serif !important;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #373a3c;
+  background-color: #fff;
+}
+.tag-default {
+  color: #fff !important;
+  font-size: 0.8rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  white-space: nowrap;
+  margin-right: 3px;
+  margin-bottom: 0.2rem;
+  display: inline-block;
+  padding: 0 8px;
+  border-radius: 30px;
+}
+.article-preview {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 0;
+}
+.article-meta {
+  display: block;
+  position: relative;
+  font-weight: 300;
+}
+
+.article-meta img {
+  display: inline-block;
+  vertical-align: middle;
+  height: 32px;
+  width: 32px;
+  border-radius: 30px;
+}
+.info a {
+  color: rgb(92, 184, 92);
+  display: flex;
+}
+.article-meta .info .author {
+  display: block;
+  font-weight: 500 !important;
+}
+.article-meta .info {
+  margin: 0 1.5rem 0 0.3rem;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin-bottom: 0.5rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+.article-preview .preview-link h1 {
+  font-weight: 600 !important;
+  font-size: 1.5rem !important;
+  margin-bottom: 3px;
+}
+.preview-link {
+  color: inherit !important;
+  text-decoration: none;
+}
+.article-preview .preview-link p {
+  font-weight: 300;
+  font-size: 24px;
+  color: #999;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  line-height: 1.3rem;
+}
+.article-preview .preview-link span {
+  max-width: 30%;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #bbb;
+  vertical-align: middle;
+}
+.author {
+  text-decoration: none;
+}
+.btn-outline-primary {
+  border-color: rgb(92, 184, 92) !important ;
+  color: rgb(92, 184, 92) !important;
+}
+.btn-outline-primary:focus {
+  background: rgb(92, 184, 92) !important;
+  color: #fff !important;
+}
+.btn-outline-primary:hover {
+  background: rgb(92, 184, 92) !important;
+  color: #fff !important;
+}
+.article-meta {
+  margin: 0 0 16px;
+}
+ul.tag-list {
+  padding-left: 0px !important;
+  display: inline-block;
+  list-style: none !important;
+}
+.article-preview .preview-link ul {
+  float: right;
+  max-width: 50%;
+  vertical-align: top;
+}
+.article-preview .preview-link ul li {
+  font-weight: 300;
+  font-size: 0.8rem !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+.tag-default.tag-outline {
+  border: 1px solid #ddd;
+  color: #aaa !important;
+  background: none !important;
+}
+ul.tag-list li {
+  display: inline-block !important;
+}
+
+.article-meta .btn-outline-primary i {
+  float: right !important;
+}
+
+
+/* tags styling */
+.sidebar {
+
+  background: #f3f3f3;
+  border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.sidebar span {
+  padding: 5px 10px 0px 10px;
+}
+.tag-default {
+  color: #fff !important;
+  font-size: 0.8rem;
+  padding-top: 0.250rem;
+  padding-bottom: 0.250rem;
+  white-space: nowrap;
+  margin-right: 0.2em;
+  margin-bottom: 0.2rem;
+  display: inline-block;
+  background-color: #818a91;
+}
+.tag-pill {
+  padding-right: 0.8em;
+  padding-left: 0.8em;
+  border-radius: 10rem;
+  text-decoration: none;
+}

@@ -1,0 +1,97 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="feed-toggle">
+        <ul class="nav nav-pills outline-active">
+          <li class="nav-item" show-authed="true" style="display: none">
+            <a
+              href=""
+              class="nav-link"
+              *ngIf="isActive"
+              ng-class="{ active: $ctrl.listConfig.type === 'feed' }"
+              ng-click="$ctrl.changeList({ type: 'feed' })"
+            >
+              Your Feed
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href=""
+              class="nav-link"
+              [ngClass]="!isActive ? 'active' : ''"
+              ng-click="$ctrl.changeList({ type: 'all' })"
+            >
+              <span>Global Feed</span>
+            </a>
+          </li>
+          <li class="nav-item" *ngIf="isActive">
+            <a
+              href=""
+              [ngClass]="isActive ? 'active nav-link' : ''"
+              (click)="changeList({ type: 'all' })"
+            >
+              <span>{{ hashtage }}</span>
+            </a>
+          </li>
+          <!-- <li class="nav-item" fxFlex="40%" >
+          <a href="" class="nav-link active" ng-class="{ active: $ctrl.listConfig.type === 'all' &amp;&amp; !$ctrl.listConfig.filters }" ng-click="$ctrl.changeList({ type: 'all' })">
+         <span></span>
+          </a>
+        </li> -->
+        </ul>
+        <div class="article-preview" *ngFor="let article of articles">
+          <div class="article-meta">
+            <span routerLink="viewmodal"><img src="{{ article.author.image }}" /></span>
+            <div class="info">
+              <a [href]="'authors/'+article.author.username"class="author">{{ article.author.username }}</a>
+              <span class="date">{{ formattedDate(article.updatedAt) }}</span>
+            </div>
+            <button class="btn btn-outline-primary btn-sm pull-xs-right">
+              <i class="ion-heart">{{ article.favoritesCount }}</i>
+            </button>
+          </div>
+          <a routerLink="'articles/'+article.slug" class="preview-link">
+            <h1>{{ article.title }}
+            </h1>
+            <p>{{ article.description }}</p>
+            <span>Read more...</span>
+            <ul class="tag-list">
+              <li
+                class="tag-default tag-pill tag-outline ng-binding ng-scope"
+                *ngFor="let tags of article.tagList"
+              >
+              {{ tags }}
+              </li>
+            </ul>
+          </a>
+        </div>
+      </div>
+      <hr class="m-0 p-0" />
+      <div class="pagination-container">
+        <ngb-pagination
+          class="pagination-color"
+          (pageChange)="onPagination($event)"
+          [collectionSize]="count"
+          [(page)]="page"
+          aria-label="Default pagination"
+        ></ngb-pagination>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="sidebar">
+        <span><h6>Popular Tags</h6></span>
+        <div class="sidebar">
+          <div class="tag-list" *ngFor="let tag of tags">
+            <button
+              [value]="tag"
+              class="tag-default tag-pill ng-binding ng-scope"
+              (click)="getValue($event)"
+            >
+              {{ tag }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

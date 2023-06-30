@@ -1,0 +1,44 @@
+.navbar-brand{
+  font-family: "Titillium Web", sans-serif;
+    font-size: 1.5rem !important;
+    padding-top: 0rem !important;
+    margin-right: 2rem !important;
+    color: #5CB85C !important;
+    float: left;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+}
+.navbar-nav .nav-item {
+  float: left;
+  cursor: pointer;
+}
+a {
+  color: #5CB85C;
+  text-decoration: none;
+  background: transparent;
+}
+.navbar{
+  position: relative;
+    padding: 0.5rem 1rem;
+}
+.navbar-light .navbar-nav .nav-link:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+/* .navbar-light .navbar-nav .open > .nav-link, .navbar-light .navbar-nav .open > .nav-link:focus, .navbar-light .navbar-nav .open > .nav-link:hover, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .active > .nav-link:focus, .navbar-light .navbar-nav .active > .nav-link:hover, .navbar-light .navbar-nav .nav-link.open, .navbar-light .navbar-nav .nav-link.open:focus, .navbar-light .navbar-nav .nav-link.open:hover, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.active:focus, .navbar-light .navbar-nav .nav-link.active:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+.navbar-light[_ngcontent-ng-c1661523650] .navbar-nav[_ngcontent-ng-c1661523650] .nav-link[_ngcontent-ng-c1661523650] {
+  color: rgba(0, 0, 0, 0.3);
+} */
+.navbar-nav {
+  flex-direction: row;
+}
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #373a3c;
+  background-color: #fff;
+}
